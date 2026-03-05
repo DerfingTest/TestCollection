@@ -1,5 +1,5 @@
 info:
-  name: Получить индекс книг
+  name: Все книги
   type: http
   seq: 1
 
