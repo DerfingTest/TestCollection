@@ -1,0 +1,146 @@
+info:
+  name: Все коментарии
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: /comments
+  params:
+    - name: id
+      value: ""
+      type: query
+      disabled: true
+    - name: id
+      value: asc
+      type: query
+      disabled: true
+    - name: id
+      value: desc
+      type: query
+      disabled: true
+    - name: page
+      value: "1"
+      type: query
+      disabled: true
+    - name: perPage
+      value: "15"
+      type: query
+      disabled: true
+    - name: cursor
+      value: ""
+      type: query
+      disabled: true
+    - name: paginate
+      value: default
+      type: query
+      disabled: true
+    - name: paginate
+      value: cursor
+      type: query
+      disabled: true
+    - name: paginate
+      value: none
+      type: query
+      disabled: true
+    - name: query
+      value: ""
+      type: query
+      disabled: true
+    - name: cache
+      value: "true"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: "200"
+    request:
+      url: /comments
+      method: GET
+      params:
+        - name: id
+          value: ""
+          type: query
+          disabled: true
+        - name: id
+          value: asc
+          type: query
+          disabled: true
+        - name: id
+          value: desc
+          type: query
+          disabled: true
+        - name: page
+          value: "1"
+          type: query
+          disabled: true
+        - name: perPage
+          value: "15"
+          type: query
+          disabled: true
+        - name: cursor
+          value: ""
+          type: query
+          disabled: true
+        - name: paginate
+          value: default
+          type: query
+          disabled: true
+        - name: paginate
+          value: cursor
+          type: query
+          disabled: true
+        - name: paginate
+          value: none
+          type: query
+          disabled: true
+        - name: query
+          value: ""
+          type: query
+          disabled: true
+        - name: cache
+          value: "true"
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: |-
+          {
+            "data": [
+              {
+                "id": 101,
+                "postId": 12,
+                "name": "Ivan Petrov",
+                "email": "ivan.petrov@example.com",
+                "body": "Отличная статья, спасибо за подробное объяснение."
+              },
+              {
+                "id": 102,
+                "postId": 12,
+                "name": "Olga Smirnova",
+                "email": "olga.smirnova@example.com",
+                "body": "Можно добавить пример для асинхронного сценария?"
+              }
+            ],
+            "meta": {
+              "page": 1,
+              "perPage": 15,
+              "total": 2,
+              "pages": 1
+            },
+            "links": {
+              "self": "/comments?page=1&perPage=15",
+              "next": null,
+              "prev": null
+            }
+          }
