@@ -120,7 +120,7 @@ examples:
               {
                 "id": 101,
                 "postId": 12,
-                "name": "Ivan Petrov",
+                "name": "Ivan Vasiliev",
                 "email": "ivan.petrov@example.com",
                 "body": "Отличная статья, спасибо за подробное объяснение."
               },
